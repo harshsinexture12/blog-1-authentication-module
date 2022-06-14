@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block title %} Login page {% endblock title %}
+
+{% block content %}
+
+
+
+
+{% if message %}
+  {{ message }}
+
+{% endif %} 
+
+ <form action="/log_in" method="POST">
+ 	{{ form.hidden_tag() }}
+  
+  
+  {{ form.email.label(class="form-control-label") }}
+  {% if form.email.errors %}
+      {{ form.email(class="form-control form-control-lg is-invalid") }}
+      <div class="invalid-feedback">
+          {% for error in form.email.errors %}
+              <span>{{ error }}</span>
+          {% endfor %}
+      </div>
+  {% else %}
+      {{ form.email(class="form-control form-control-lg") }}
+  {% endif %}
+
+
+
+  <div class="form-group">
+    {{ form.password.label(class="form-control-label") }}
+    {% if form.password.errors %}
+        {{ form.password(class="form-control form-control-lg is-invalid") }}
+        <div class="invalid-feedback">
+            {% for error in form.password.errors %}
+                <span>{{ error }}</span>
+            {% endfor %}
+        </div>
+    {% else %}
+        {{ form.password(class="form-control form-control-lg") }}
+    {% endif %}
+  </div>
+
+  <p> 
+    {{ form.submit.label }}
+    {{ form.submit }}
+</p> 
+ 
+
+</form>
+
+
+
+
+
+
+
+{% if message!=None %}
+  <h3>{{message}}</h3>
+{% endif %}
+
+
+<a href="{{ url_for('sign_up') }}"> Sign Up </a>
+ 
+  
+
+{% endblock %}
