@@ -5,7 +5,7 @@ from wtforms import StringField, SubmitField, validators, PasswordField, Boolean
 from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError
 from flask_wtf.file import FileField, FileRequired, FileAllowed
 # from modules import User
-from flask_login import current_user
+
 
 
 # create form class 
