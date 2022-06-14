@@ -2,7 +2,6 @@ import email
 import re
 from flask import Flask, render_template, request , flash, redirect, url_for, session, g
 import flask
-from urllib3 import Retry
 #from flask_session import session
 
 # from werkzeug  import secure_filename
